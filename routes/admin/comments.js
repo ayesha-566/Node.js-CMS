@@ -7,6 +7,8 @@ const Comment=require("../../models/Comment");
 const {userAuthenticated}=require("../../helpers/authentication");
 
 
+
+
 //Route to get all comments 
 router.get("/",userAuthenticated,(req,res,next)=>{
     let comm=[];
@@ -15,8 +17,6 @@ router.get("/",userAuthenticated,(req,res,next)=>{
     })
    
 })
-
-
 
 router.delete("/:id",userAuthenticated,(req,res,next)=>{
     Comment.remove({_id:req.params.id}).then(deleted=>{
