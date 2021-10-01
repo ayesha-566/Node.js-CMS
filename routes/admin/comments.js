@@ -8,21 +8,15 @@ const {userAuthenticated}=require("../../helpers/authentication");
 
 
 //Route to get all comments 
-//router.get("/",userAuthenticated,(req,res,next)=>{
-//    let comm=[];
-//    Comment.find({}).populate("user").then(comments=>{
-//      render("admin/comments",{comments:comments});
-//    })
-   
-//})
-
-//Route to get the comments on only your post
 router.get("/",userAuthenticated,(req,res,next)=>{
-    //console.log(req.user.id);
-    Post.find({user:req.user._id}).then(posts=>{
-       
+    let comm=[];
+    Comment.find({}).populate("user").then(comments=>{
+      render("admin/comments",{comments:comments});
     })
-});
+   
+})
+
+
 
 router.delete("/:id",userAuthenticated,(req,res,next)=>{
     Comment.remove({_id:req.params.id}).then(deleted=>{
