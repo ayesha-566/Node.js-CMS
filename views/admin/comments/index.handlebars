@@ -1,0 +1,26 @@
+<h1 style="padding:40px">COMMENTS</h1>
+<table class="table">
+  <thead>
+    <tr>
+    
+      <th scope="col">Comment made by</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each comments}}
+    <tr>
+    
+ 
+      <td>{{user.firstName}} {{user.lastName}}</td>
+      <td>{{generateTime date "MMMM DD YYYY"}}</td>
+      <td>
+      <form action="/admin/comments/{{id}}?_method=DELETE" method="post">
+      <button type="submit">Delete</button>
+      </form>
+      </td>
+       <td><input type="checkbox" name="approveComment"></td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

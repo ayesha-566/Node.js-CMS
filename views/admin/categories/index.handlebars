@@ -1,0 +1,40 @@
+<h1 style="padding-top: 40px;">Create Category</h1>
+<div class="row">
+<div class="col-sm-4">
+    <form action="/admin/categories/create" method="POST">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Enter title">
+    </div>
+    <div style="padding-bottom: 40px;">
+        <button >Create Category</button>
+    </div>
+    
+    </form>
+
+</div>
+</div>
+<h1 style="padding-down: 40px;">Categories</h1>
+<div class="table">
+<table>
+    <tr>
+     
+         <th style="border:1px solid black">Name</th>
+          <th style="border:1px solid black">Date</th>
+    </tr>
+    {{#each categories}}
+    <tr>
+       
+        <td style="border:1px solid black">{{name}}</td>
+        <td style="border:1px solid black">{{generateTime date "MMMM DD YYYY"}}</td>
+        <td style="border:1px solid black"><a href="/admin/categories/edit/{{name}}"><button type="submit">Edit</button></a></td>
+          <td>
+      <form action="/admin/categories/delete/{{name}}?_method=DELETE" method="post">
+      <button type="submit">Delete</button>
+      </form>
+
+ </tr>
+    </tr>
+    {{/each}}
+</table>
+</div>

@@ -1,0 +1,42 @@
+<h1 style="padding: 40px;">ALL POSTS</h1>
+
+{{#if success_message}}
+<div class="alert alert-success">
+ {{success_message.intro}}
+ </div>
+{{/if}}
+<table class="table table-bordered" style="border:1px solid black">
+
+<tr>
+ 
+    <th style="border:1px solid black">Title</th>
+    <th style="border:1px solid black">Status</th>
+    <th style="border:1px solid black">Allow Comments</th>
+    <th style="border:1px solid black">Description</th>
+    <th style="border:1px solid black">Upload Date</th>
+    <th style="border:1px solid black">Category</th>
+     <th style="border:1px solid black">Image</th>
+
+</tr>
+
+  {{#each posts}}
+<tr>
+
+    <td style="border:1px solid black">{{title}}</td>
+    <td style="border:1px solid black">{{status}}</td>
+    <td style="border:1px solid black">{{allowComments}}</td>
+    <td style="border:1px solid black">{{body}}</td>
+    <td style="border:1px solid black">{{generateTime date "MMMM DD YYYY"}}</td>
+    <td style="border:1px solid black">{{category.name}}</td>
+    <td style="border:1px solid black"><image height="100" src="/uploads/{{file}}"></image></td>
+    <td><a href="/admin/posts/edit/{{title}}"> <button type="submit">Edit</button></a></td>
+    <td>
+      <form action="/admin/posts/{{title}}?_method=DELETE" method="post">
+      <button type="submit">Delete</button>
+      </form>
+</td>
+
+ </tr>
+    {{/each}}
+
+</table>

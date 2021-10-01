@@ -1,0 +1,29 @@
+npm init
+npm install express
+npm install mongoose
+npm install body-parser
+npm install express --save
+npm install --save-dev nodemon
+npm install express-handlebars
+npm install @handlebars/allow-prototype-access
+npm install handlebars
+npm install method-override
+npm install faker: to create fake data to better test the website: video 101 and 102
+npm install express-fileupload: to add file upload feature
+
+For flash messages:
+npm install express-session connect-flash
+
+To format dates:
+npm install moment
+
+See: passportjs.org to get pre-built code to login using facebook, google etc:
+npm install passport passport-local
+
+In this project, passport-local is used where signup is done using username and password
+
+npm install bcryptjs: to hash passwords
+
+chartsjs.org: for charts 
+
+npm install mongoose-url-slugs

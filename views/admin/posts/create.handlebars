@@ -1,0 +1,55 @@
+<h1 style="padding:10px ;">Create Post</h1>
+
+{{#each errors}}
+    {{errors}}
+{{/each}}
+
+
+
+
+<form action="/admin/posts/create" method="post" enctype="multipart/form-data">
+<div class="form-group" style="padding:10px ;">
+    <label for="title">Title</label>
+    <input name="title" type="text" class="form-control" placeholder="Enter title" required>
+    </div>
+
+<div class="form-group" style="padding:10px ;">
+    <label for="file">Select image</label>
+    <input name="file" type="file" class="form-control" required>
+    </div>
+   <div class="form-group" style="padding:10px ;">
+       <label for="category">Select category</label>
+    <select name="category" class="form-control">
+       {{#each categories}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+        
+    </select>
+   </div>
+    <div class="form-group" style="padding:10px ;">
+        
+    <select name="status" id="status" class="form-control">
+        <option>Public</option>
+        <option>Private</option>
+        <option>Draft</option>
+    </select>
+   </div>
+<div class="form-group" style="padding:10px ;">
+    <label for="allowComments">Allow</label>
+    <input name="allowComments"type="checkbox" class="form-control" id="allowComments" placeholder="Allow Comments" >
+    </div>
+
+    <div class="form-group" style="padding:10px ;">
+    <label for="body">Description</label>
+    <textarea name="body" rows="20" cols="20" type="checkbox" class="form-control" id="body" placeholder="Enter Description" required></textarea>
+    </div>
+
+
+ 
+    <div class="form-group" style="padding:10px ;">
+    <button type="submit">Submit</button>
+</div>
+
+
+
+</form>
